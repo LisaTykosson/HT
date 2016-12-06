@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>   
+    </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.js"></script>
+    <script src="js/npm.js"></script>
+    <script src="js/JavaScript.js"></script>
+</head>
+<body>
+    <div style="width:70%" class="center-block">
+        <ul class="nav nav-tabs navbar-default center-block nav-justified">
+            <li role="presentation" id="diag"><a href="Anmalan.html">Anmälan</a></li>
+            <li role="presentation" id="kir" class="active"><a href="kir.html">Kirurgisk behandling</a></li>
+            <li role="presentation" id="kir"><a href="onk.html">Icke-kirurgisk behandling</a></li>
+        </ul>
+        <br />
+        <ul class="nav nav-justified navbar-default nav-tabs" style="width:35%">
+            <li role="presentation" id="diag" ><a href="kir.html">Kirurgisk behandling</a></li>
+            <li role="presentation" id="kir" class="active"><a href="postop.html">Postoperativ uppföljning</a></li>
+        </ul>
+        <br />
+    </div>
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Komplikationer</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Postoperativa komplikationer</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="postopkomp" onchange="postop()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div id="komplikationer" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Infektiösa</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" id="infektion" onchange="infektiosa()" />
+                    </div>
+                </div>
+                <div class="container" id="infekt" style="display:none">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Pneumoni</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="pneu" onchange="clavpneu()" />
+                        </div>
+                    </div>
+                    <div class="row form-group" id="clav" style="display:none">
+                        <label class="control-label col-sm-3">Clavien-dindo gradering</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3a</option>
+                                <option value="4">3b</option>
+                                <option value="5">4a</option>
+                                <option value="6">4b</option>
+                                <option value="7">5 (död)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">UVI</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Övrigt</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kardiovaskulära</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" id="kardiov" onchange="kardiovask()" />
+                    </div>
+                </div>
+                <div class="container" id="kardio" style="display:none">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Hjärtinfarkt</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Hjärtsvikt</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Arytmi</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Djup ventrombos</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Neurokirurgiska</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" id="neurokir" onchange="neurokirurg()" />
+                    </div>
+                </div>
+                <div class="container" id="neuro" style="display:none">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Postoperativ sårinfektion</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Postoperativt hematom</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Hydrocephalus</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Postoperativa kramper</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Komplikation som ligger till grund för Clavien-dindo gradering <a href="#" class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Listan kan filtreras så att endast de komplikationer som markerats är synliga och valbara"></a></label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Pneumoni</option>
+                            <option value="2">UVI</option>
+                            <option value="3">Övrig infektiös</option>
+                            <option value="4">Hjärtinfarkt</option>
+                            <option value="5">Hjärtsvikt</option>
+                            <option value="6">Arytmi</option>
+                            <option value="7">Djup ventrombos</option>
+                            <option value="8">Postoperativ sårinfektion</option>
+                            <option value="9">Postoperativt hematom</option>
+                            <option value="10">Hydrocephalus</option>
+                            <option value="11">Postoperativa kramper</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Clavien-dindo gradering</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3a</option>
+                            <option value="4">3b</option>
+                            <option value="5">4a</option>
+                            <option value="6">4b</option>
+                            <option value="7">5 (död)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Nytillkommen postoperativ epilepsi</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Övergående neurologiska bortfall i fullständig regress vid 30 dagar</label>
+                <div class="col-xs-3">
+                    <select class="form-control" onchange="reg()" id="regr">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div id="regress" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Dysfasi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Pares/Plegi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kranialnervspåverkan</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kognitiva symptom</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Nytillkomna efter 30 dagar kvarstående neurologiska bortfall</label>
+                <div class="col-xs-3">
+                    <select class="form-control" onchange="nytill()" id="nya">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div id="bortfall" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Dysfasi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Pares/Plegi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kranialnervspåverkan</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kognitiva symptom</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
