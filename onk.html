@@ -3,8 +3,205 @@
 <head>
     <title></title>
 	<meta charset="utf-8" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.js"></script>
+    <script src="js/npm.js"></script>
+    <script src="js/JavaScript.js"></script>
 </head>
 <body>
-
+    <ul class="nav nav-tabs navbar-default center-block nav-justified center-block" style="width:70%">
+        <li role="presentation" id="diag"><a href="Anmalan.html">Anmälan</a></li>
+        <li role="presentation"><a href="kir.html">Kirurgisk behandling</a></li>
+        <li role="presentation" class="active"><a href="onk.html">Icke-kirurgisk behandling</a></li>
+    </ul>
+    <br />
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Inrapporteringsuppgifter</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Initierat av</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Inrapportör</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Inrapporterande enhet</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Läkare</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Inrapporteringsdatum</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" placeholder="2017-01-01" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Patientuppgifter</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Multidisciplinär konferens</label>
+                <div class="col-xs-3">
+                   <select class="form-control" id="multidisci" onchange="multi()">
+                       <option value="0">--Välj--</option>
+                       <option value="1">Nej</option>
+                       <option value="2">Ja</option>
+                   </select>
+                </div>
+            </div>
+            <div class="row form-group" id="multidat" style="display:none">
+                <label class="control-label col-sm-3">Datum</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Har patienten tillgång till kontaktsjuksköterska?</label>
+                <div class="col-xs-3">
+                    <select class="form-control" >
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Funktionsgrad före icke-kirurgisk behandling</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">0</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Datum för bedömning</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Progressbedömning</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Progressbedömning</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="prog" onchange="progr()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div id="tumprog" style="display:none" >
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Klinisk tumörprogress</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="klinp" onchange="klinprog()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group" id="klindat" style="display:none">
+                    <label class="control-label col-sm-3">Datum</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Radiologisk tumörprogress</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Radiologisk undersökning</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="radio" onchange="radiolund()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="radund" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">CT</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="CT" onchange="ctd()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group" id="CTdat" style="display:none">
+                    <label class="control-label col-sm-3">Datum</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">MRT</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="MRT" onchange="mrtd()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group" id="MRTdat" style="display:none">
+                    <label class="control-label col-sm-3">Datum</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">PET</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="PET" onchange="petd()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group" id="PETdat" style="display:none">
+                    <label class="control-label col-sm-3">Datum</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
