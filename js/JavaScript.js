@@ -134,3 +134,85 @@ function nytill() {
         document.getElementById("bortfall").style.display = "none";
     }
 }
+function symtomfri() {
+    if
+        (document.getElementById("sym").selectedIndex == "1" && document.getElementById("lokal").selectedIndex == "3") {
+        document.getElementById("symtomryggar").style.display = "block";
+        document.getElementById("symtom").style.display = "none";
+    }
+    else if(document.getElementById("sym").selectedIndex == "1" && document.getElementById("lokal").selectedIndex == "2") {
+        document.getElementById("symtom").style.display = "block";
+        document.getElementById("symtomryggar").style.display = "none";
+    }
+    else if (document.getElementById("sym").selectedIndex == "1" && document.getElementById("lokal").selectedIndex == "1") {
+        document.getElementById("symtom").style.display = "block";
+        document.getElementById("symtomryggar").style.display = "none";
+    }
+    else {
+        document.getElementById("symtom").style.display = "none";
+        document.getElementById("symtomryggar").style.display = "none";
+    }
+}
+function mdtdat() {
+    if 
+        (document.getElementById("mdt").selectedIndex == "2") {
+        document.getElementById("mdk").style.display = "block";
+    }
+    else {
+        document.getElementById("mdk").style.display = "none";
+    }
+}
+function kirbehklin() {
+    if
+        (document.getElementById("kirbeh").selectedIndex == "2") {
+        document.getElementById("kirklin").style.display = "block";
+        document.getElementById("who").style.display = "none";
+    }
+    else {
+        document.getElementById("kirklin").style.display = "none";
+        document.getElementById("who").style.display = "block";
+    }
+}
+function ickirbehklin() {
+    if 
+        (document.getElementById("ickirbeh").selectedIndex == "2") {
+        document.getElementById("ickirklin").style.display = "block";
+    }
+    else {
+        document.getElementById("ickirklin").style.display = "none";
+    }
+}
+function expekt() {
+    if
+        (document.getElementById("ex").selectedIndex == "2") {
+        document.getElementById("expektans").style.display = "block";
+    }
+    else {
+        document.getElementById("expektans").style.display = "none";
+    }
+}
+function symtlindr() {
+    if 
+        (document.getElementById("lindra").selectedIndex == "2") {
+        document.getElementById("symlindr").style.display = "block";
+    }
+    else {
+        document.getElementById("symlindr").style.display = "none";
+    }
+}
+function malignitet() {
+    if
+        (document.getElementById("snomed").selectedIndex == "3") {
+        document.getElementById("malign").style.display = "block";
+    }
+    else {
+        document.getElementById("malign").style.display = "none";
+    }
+}
+function diagrund() {
+    if (document.getElementById("annatdia").checked)
+        document.getElementById("anndia").style.display = "block";
+    else {
+        document.getElementById("anndia").style.display = "none";
+    }
+}
