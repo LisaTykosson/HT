@@ -52,93 +52,9 @@
         </div>
     </div>
     <div class="panel panel-default center-block" style="width:70%">
-        <div class="panel panel-default panel-heading panel-title">Patientuppgifter</div>
+        <div class="panel panel-default panel-heading panel-title">Tumörlokalisation</div>
         <div class="panel panel-body">
-            <div class="row form-group">
-                <label class="control-label col-sm-3">Rökvanor</label>
-                <div class="col-xs-3">
-                    <select class="form-control">
-                        <option value="0">--Välj--</option>
-                        <option value="1">Aldrig rökare</option>
-                        <option value="2">Före detta rökare</option>
-                        <option value="3">Rökare</option>
-                        <option value="4">Okänt</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row form-group">
-                <label class="control-label col-sm-3 h4">Symtom vid insjuknande</label>
-            </div>
-            <div class="row form-group">
-                <label class="control-label col-sm-3">Symtomfri</label>
-                <div class="col-xs-3">
-                    <select class="form-control">
-                        <option value="0">--Välj--</option>
-                        <option value="1">Nej</option>
-                        <option value="2">Ja</option>
-                    </select>
-                </div>
-            </div>
-            <div id="symtom" style="display:none">
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Fokalneurologiska</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Epilepsi</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Trycksymtom</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Kognition och/eller personlighetsförändringar</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Värk</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
 
-
-        </div>
-    </div>
-    <div class="panel panel-default center-block" style="width:70%">
-        <div class="panel panel-default panel-heading panel-title">Tumöruppgifter</div>
-        <div class="panel panel-body">
-           
             <div class="row form-group">
                 <label class="control-label col-sm-3">Tumörens lokalisation</label>
                 <div class="col-xs-3">
@@ -184,11 +100,7 @@
                 <div class="row form-group">
                     <label class="control-label col-sm-3">Spinalt</label>
                     <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
+                        <input type="checkbox" />
                     </div>
                 </div>
                 <div class="row form-group">
@@ -199,6 +111,12 @@
                 </div>
                 <div class="row form-group">
                     <label class="control-label col-sm-3">Extramedulärt</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Multifokalt</label>
                     <div class="col-xs-3">
                         <input type="checkbox" />
                     </div>
@@ -215,7 +133,7 @@
                     <div class="row form-group">
                         <label class="control-label col-sm-3">Supratentoriellt</label>
                         <div class="col-xs-3">
-                            <input type="checkbox"/>
+                            <input type="checkbox" />
                         </div>
                     </div>
                     <div class="row form-group">
@@ -225,11 +143,11 @@
                         </div>
                     </div>
                 </div>
-               
+
                 <div class="row form-group">
                     <label class="control-label col-sm-3">Främre skallbas</label>
                     <div class="col-xs-3">
-                        <input type="checkbox" id="framre" onchange="frammening()"/>
+                        <input type="checkbox" id="framre" onchange="frammening()" />
                     </div>
                 </div>
 
@@ -256,7 +174,7 @@
                 <div class="row form-group">
                     <label class="control-label col-sm-3">Mellersta skallbasen</label>
                     <div class="col-xs-3">
-                        <input type="checkbox" id="mell" onchange="mellmening()"/>
+                        <input type="checkbox" id="mell" onchange="mellmening()" />
                     </div>
                 </div>
 
@@ -336,40 +254,71 @@
                         <input type="checkbox" />
                     </div>
                 </div>
-            </div>  
+            </div>
             <div id="ryggar" style="display:none">
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Rygg</label>
+                    <label class="control-label col-sm-3">Cervikalt</label>
                     <div class="col-xs-3">
                         <input type="checkbox" />
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Rygg</label>
+                    <label class="control-label col-sm-3">Thorakalt</label>
                     <div class="col-xs-3">
                         <input type="checkbox" />
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Bilateralt</label>
+                    <label class="control-label col-sm-3">Lumbalt</label>
                     <div class="col-xs-3">
                         <input type="checkbox" />
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Centralt</label>
+                    <label class="control-label col-sm-3">Sakralt</label>
                     <div class="col-xs-3">
                         <input type="checkbox" />
                     </div>
                 </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Multilobär</label>
-                    <div class="col-xs-3">
-                        <input type="checkbox" />
-                    </div>
+              
+                
+               
+            </div>
+
+
+        </div>
+    </div>
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Patientuppgifter</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Rökvanor</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Aldrig rökare</option>
+                        <option value="2">Före detta rökare</option>
+                        <option value="3">Rökare</option>
+                        <option value="4">Okänt</option>
+                    </select>
                 </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3 h4">Symtom vid insjuknande</label>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Symtomfri</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="sym" onchange="symtomfri()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div id="symtomryggar" style="display:none">
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Spinalt</label>
+                    <label class="control-label col-sm-3">Spinala bortfallssymtom</label>
                     <div class="col-xs-3">
                         <select class="form-control">
                             <option value="0">--Välj--</option>
@@ -379,21 +328,317 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Intramedulärt</label>
+                    <label class="control-label col-sm-3">Perifer neurogen påverkan i skadenivån (ex rhizopatisymtom)</label>
                     <div class="col-xs-3">
-                        <input type="checkbox" />
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Extramedulärt</label>
+                    <label class="control-label col-sm-3">Blås/ tarmpåverkan (cauda equina)</label>
                     <div class="col-xs-3">
-                        <input type="checkbox" />
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
                     </div>
                 </div>
-            </div> 
-                 
-                
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Ryggsmärta</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div id="symtom" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Fokalneurologiska</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Epilepsi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Trycksymtom</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kognition och/eller personlighetsförändringar</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Värk</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Diagnosuppgifter</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Diagnosdatum enligt första bilddiagnostik</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3 h4">Diagnostiska undersökningar</label>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Datortomografi</label>
+                <div class="col-xs-3">
+                    <input type="checkbox" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">MRT</label>
+                <div class="col-xs-3">
+                    <input type="checkbox" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">PET</label>
+                <div class="col-xs-3">
+                    <input type="checkbox" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Kontrastuppladdning</label>
+                <div class="col-xs-3">
+                    <input type="checkbox" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Annat</label>
+                <div class="col-xs-3">
+                    <input type="checkbox" id="annatdia" onchange="diagrund()" />
+                </div>
+            </div>
+            <div class="row form-group" id="anndia" style="display:none">
+                <label class="control-label col-sm-3">Specificera</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Diagnosgrund</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Bildundersökning</option>
+                        <option value="2">Cytologi</option>
+                        <option value="3">PAD</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">SNOMED</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="snomed" onchange="malignitet()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">80000 Beningn tumör</option>
+                        <option value="2">80001 Misstänkt malign/oklart benign eller malign</option>
+                        <option value="3">80003 UNS malign tumör</option>
+                        <option value="4">90643 Germinom </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group" id="malign" style="display:none">
+                <label class="control-label col-sm-3">Hög-/Lågmalign</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Misstänkt högmalign</option>
+                        <option value="2">Misstänkt lågmalign</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Planerad behandling</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Har patienten, i journal dokumenterad, kontaktsjuksköterska</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">MDT-Konferens (innan behandling)</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="mdt" onchange="mdtdat()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container-fluid" id="mdk" style="display:none">
+                <div class="row form-group" >
+                    <label class="control-label col-sm-3">Datum</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Kirurgisk behandling</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="kirbeh" onchange="kirbehklin()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container-fluid" id="kirklin" style="display:none" >
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Behandlande klinik/sjukhus</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Lista med </option>
+                            <option value="2">kliniker att välja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Icke-Kirurgisk behandling</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="ickirbeh" onchange="ickirbehklin()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container-fluid" id="ickirklin" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Behandlande klinik/sjukhus</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Lista med </option>
+                            <option value="2">kliniker att välja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Expektans</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="ex" onchange="expekt()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container-fluid" id="expektans" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Behandlande klinik/sjukhus</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Lista med </option>
+                            <option value="2">kliniker att välja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Endast symtomlindrande behandling</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="lindra" onchange="symtlindr()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container-fluid" id="symlindr" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Behandlande klinik/sjukhus</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Lista med </option>
+                            <option value="2">kliniker att välja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="who">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">PS (WHO 0-4)</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">0</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
 </body>
 </html>
