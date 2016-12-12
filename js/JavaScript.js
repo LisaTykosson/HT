@@ -216,3 +216,64 @@ function diagrund() {
         document.getElementById("anndia").style.display = "none";
     }
 }
+function multi() {
+    if (document.getElementById("multidisci").selectedIndex == "2")
+        document.getElementById("multidat").style.display = "block";
+    else {
+        document.getElementById("multidat").style.display = "none";
+    }
+}
+function progr() {
+    if 
+        (document.getElementById("prog").selectedIndex == "2") {
+        document.getElementById("tumprog").style.display = "block";
+    }
+    else {
+        document.getElementById("tumprog").style.display = "none";
+    }
+}
+function klinprog() {
+    if
+        (document.getElementById("klinp").selectedIndex == "2") {
+        document.getElementById("klindat").style.display = "block";
+    }
+    else {
+        document.getElementById("klindat").style.display = "none";
+    }
+}
+function radiolund() {
+    if 
+        (document.getElementById("radio").selectedIndex == "2") {
+        document.getElementById("radund").style.display = "block";
+    }
+    else {
+        document.getElementById("radund").style.display = "none";
+    }
+}
+function ctd() {
+    if
+        (document.getElementById("CT").selectedIndex == "2") {
+        document.getElementById("CTdat").style.display = "block";
+    }
+    else {
+        document.getElementById("CTdat").style.display = "none";
+    }
+}
+function mrtd() {
+    if 
+        (document.getElementById("MRT").selectedIndex == "2") {
+        document.getElementById("MRTdat").style.display = "block";
+    }
+    else {
+        document.getElementById("MRTdat").style.display = "none";
+    }
+}
+function petd() {
+    if
+        (document.getElementById("PET").selectedIndex == "2") {
+        document.getElementById("PETdat").style.display = "block";
+    }
+    else {
+        document.getElementById("PETdat").style.display = "none";
+    }
+}
