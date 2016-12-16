@@ -4,27 +4,34 @@
         document.getElementById("meningiom").style.display = "block"
         document.getElementById("ovriga").style.display = "none";
         document.getElementById("ryggar").style.display = "none";
+        document.getElementById("symtomryggar").style.display = "none";
+        document.getElementById("symtom").style.display = "none";
     }
     else if (
         document.getElementById("lokal").selectedIndex == "2") {
         document.getElementById("ovriga").style.display = "block"
         document.getElementById("meningiom").style.display = "none";
         document.getElementById("ryggar").style.display = "none";
+        document.getElementById("symtomryggar").style.display = "none";
+        document.getElementById("symtom").style.display = "none";
     }
     else if (
     document.getElementById("lokal").selectedIndex == "3") {
         document.getElementById("ryggar").style.display = "block"
         document.getElementById("meningiom").style.display = "none";
         document.getElementById("ovriga").style.display = "none";
+        document.getElementById("symtomryggar").style.display = "none";
+        document.getElementById("symtom").style.display = "none";
     }
 
     else {
         document.getElementById("meningiom").style.display = "none"
         document.getElementById("ryggar").style.display = "none";
         document.getElementById("ovriga").style.display = "none";
+        document.getElementById("symtomryggar").style.display = "none";
+        document.getElementById("symtom").style.display = "none";
     }
 }
-
 function frammening() {
     if (document.getElementById("framre").checked)
         document.getElementById("fram").style.display = "block";
@@ -93,25 +100,25 @@ function clavpneu() {
 function lokalisationkir() {
     if
                         (document.getElementById("lokalkir").selectedIndex == "1") {
-        document.getElementById("meningiomkir").style.display = "block"
+        document.getElementById("kirmeningiom").style.display = "block"
         document.getElementById("ovrigakir").style.display = "none";
         document.getElementById("ryggarkir").style.display = "none";
     }
     else if (
         document.getElementById("lokalkir").selectedIndex == "2") {
         document.getElementById("ovrigakir").style.display = "block"
-        document.getElementById("meningiomkir").style.display = "none";
+        document.getElementById("kirmeningiom").style.display = "none";
         document.getElementById("ryggarkir").style.display = "none";
     }
     else if (
     document.getElementById("lokalkir").selectedIndex == "3") {
         document.getElementById("ryggarkir").style.display = "block"
-        document.getElementById("meningiomkir").style.display = "none";
+        document.getElementById("kirmeningiom").style.display = "none";
         document.getElementById("ovrigakir").style.display = "none";
     }
 
     else {
-        document.getElementById("meningiomkir").style.display = "none"
+        document.getElementById("kirmeningiom").style.display = "none"
         document.getElementById("ryggarkir").style.display = "none";
         document.getElementById("ovrigakir").style.display = "none";
     }
@@ -275,5 +282,41 @@ function petd() {
     }
     else {
         document.getElementById("PETdat").style.display = "none";
+    }
+}
+function anledning() {
+    if 
+        (document.getElementById("reop").selectedIndex == "2") {
+        document.getElementById("reoper").style.display = "block";
+    }
+    else {
+        document.getElementById("reoper").style.display = "none";
+    }
+}
+function kraniotyp() {
+    if
+        (document.getElementById("kranio").selectedIndex == "2") {
+        document.getElementById("typkrani").style.display = "block";
+    }
+    else {
+        document.getElementById("typkrani").style.display = "none";
+    }
+}
+function duratyp() {
+    if 
+        (document.getElementById("dura").selectedIndex == "2") {
+        document.getElementById("typdura").style.display = "block";
+    }
+    else {
+        document.getElementById("typdura").style.display = "none";
+    }
+}
+function poopmdk() {
+    if
+        (document.getElementById("poop").selectedIndex == "2") {
+        document.getElementById("poopdat").style.display = "block";
+    }
+    else {
+        document.getElementById("poopdat").style.display = "none";
     }
 }
