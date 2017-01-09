@@ -10,16 +10,17 @@
 </head>
 <body>
 
-    <div style="width:70%" class="center-block" >
-        <ul class="nav nav-tabs navbar-default center-block nav-justified" >
+    <div style="width:70%" class="center-block">
+        <ul class="nav nav-tabs navbar-form center-block nav-justified">
             <li role="presentation" id="diag"><a href="Anmalan.html">Anmälan</a></li>
             <li role="presentation" id="kir" class="active"><a href="kir.html">Kirurgisk behandling</a></li>
             <li role="presentation" id="kir"><a href="onk.html">Icke-kirurgisk behandling</a></li>
         </ul>
         <br />
-        <ul class="nav nav-justified navbar-default nav-tabs" style="width:35%">
+        <ul class="nav navbar-form nav-tabs">
             <li role="presentation" id="diag" class="active"><a href="kir.html">Kirurgisk behandling</a></li>
-            <li role="presentation" id="kir"><a href="postop.html">Postoperativ uppföljning</a></li>
+            <li role="presentation" id="kir"><a href="postop.html">Postoperativ uppföljning inom 30 dgr</a></li>
+            <li role="presentation" id="kir"><a href="senkomp.html">Postoperativ uppföljning efter 30 dgr</a></li>
         </ul>
         <br />
     </div>
@@ -57,230 +58,562 @@
                     <input type="text" class="form-control" placeholder="2017-01-01" />
                 </div>
             </div>
+
+        </div>
+    </div>
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Primära uppgifter inför planerad operation</div>
+        <div class="panel panel-body">
             <div class="row form-group">
-                <label class="control-label col-sm-3">Operationsanledning</label>
+                <label class="control-label col-sm-3">Beslutsdatum för kirurgi</label>
                 <div class="col-xs-3">
-                    <select class="form-control" id="reop" onchange="anledning()">
-                        <option value="0">--Välj--</option>
-                        <option value="1">Primär</option>
-                        <option value="2">Reoperation</option>
-                    </select>
+                    <input type="text" class="form-control" />
                 </div>
             </div>
-            <div class="row form-group" id="reoper" style="display:none">
-                <label class="control-label col-sm-3">Orsak</label>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Operationsdatum</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Preoperativ MDT-konferens</label>
                 <div class="col-xs-3">
                     <select class="form-control">
                         <option value="0">--Välj--</option>
-                        <option value="1">Komplikationer</option>
-                        <option value="2">Progress</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
                     </select>
                 </div>
             </div>
             <div class="row form-group">
-                <label class="control-label col-sm-3">Tumörens lokalisation</label>
+                <label class="control-label col-sm-3">Planerad kirurgi ej utförd</label>
                 <div class="col-xs-3">
-                    <select class="form-control" id="lokalkir" onchange="lokalisationkir()">
-                        <option value="0">--Välj--</option>
-                        <option value="1">Hjärnhinnor</option>
-                        <option value="2">Övriga lägen</option>
-                        <option value="3">Ryggmärgshinnor</option>
-                    </select>
+                    <input type="checkbox" id="plankir" onchange="plankircheck()" />
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div id="kirmeningiom" style="display:none">
-        <div class="panel panel-default center-block" style="width:70%">
-            <div class="panel panel-default panel-heading panel-title">Lokal (jag tänker mig att vi här visar det som rapporterats i Anmälan)</div>
-            <div class="panel panel-body">
-                <div >
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Konvexitet</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" id="konvex" onchange="konvmening()" />
-                        </div>
-                    </div>
-                    <div class="container" id="konvexitet" style="display:none">
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Supratentoriellt</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Infratentoriellt</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Främre skallbas</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" id="framre" onchange="frammening()" />
-                        </div>
-                    </div>
-
-                    <div class="container" id="fram" style="display:none">
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Olfaktorius</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Planum sfenoidale</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Tuberculum sellae</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Mellersta skallbasen</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" id="mell" onchange="mellmening()" />
-                        </div>
-                    </div>
-
-                    <div class="container" id="mellan" style="display:none">
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Sinus cavernosus/Parasellärt</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Medialt kilben</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Lateralt kilben</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Temporal fossa</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Bakre skallbas</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" id="bak" onchange="bakmening()" />
-                        </div>
-                    </div>
-                    <div class="container" id="bakre" style="display:none">
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Petroclival</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Ponsvinkel/porus</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Foramen magnum (cranocervikala övergången)</label>
-                            <div class="col-xs-3">
-                                <input type="checkbox" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Tentorie</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Falx</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Opticus (nervskide)</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Intraventrikulär</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default center-block" style="width:70%">
-            <div class="panel panel-default panel-heading panel-title">Operationsindikation</div>
-            <div class="panel panel-body">
-
+            <div id="orsakplankir" style="display:none">
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Symtom</label>
+                    <label class="control-label col-sm-3">Orsak</label>
                     <div class="col-xs-3">
                         <select class="form-control">
                             <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
+                            <option value="1">Medicinska skäl</option>
+                            <option value="2">Patientens val</option>
                         </select>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Tillväxt</label>
+                    <label class="control-label col-sm-3">Funktionsgrad (PS WHO 0-4)</label>
                     <div class="col-xs-3">
                         <select class="form-control">
                             <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Storlek</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Patientens önskan</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
+                            <option value="1">0</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
                         </select>
                     </div>
                 </div>
             </div>
+            <div id="opanledning">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Operationsanledning</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="reop" onchange="anledning()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Primär</option>
+                            <option value="2">Reoperation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group" id="reoper" style="display:none">
+                    <label class="control-label col-sm-3">Orsak</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Komplikationer</option>
+                            <option value="2">Progress</option>
+                            <option value="3">Tumörrest</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Tumörens lokalisation (ICD)</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="lokalkir" onchange="lokalisationkir()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Hjärnhinnor</option>
+                            <option value="2">Övriga lägen</option>
+                            <option value="3">Ryggmärgshinnor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
+
+            <div id="kirmeningiom" style="display:none">
+                <div class="panel panel-default center-block" style="width:70%">
+                    <div class="panel panel-default panel-heading panel-title">Lokal </div>
+                    <div class="panel panel-body">
+                        <div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Konvexitet</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" id="konvex" onchange="konvmening()" />
+                                </div>
+                            </div>
+                            <div class="container" id="konvexitet" style="display:none">
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Supratentoriellt</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Infratentoriellt</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Främre skallbas</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" id="framre" onchange="frammening()" />
+                                </div>
+                            </div>
+
+                            <div class="container" id="fram" style="display:none">
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Olfaktorius</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Planum sfenoidale</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Tuberculum sellae</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Mellersta skallbasen</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" id="mell" onchange="mellmening()" />
+                                </div>
+                            </div>
+
+                            <div class="container" id="mellan" style="display:none">
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Sinus cavernosus/Parasellärt</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Medialt kilben</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Lateralt kilben</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Temporal fossa</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Bakre skallbas</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" id="bak" onchange="bakmening()" />
+                                </div>
+                            </div>
+                            <div class="container" id="bakre" style="display:none">
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Petroclival</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Ponsvinkel/porus</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Foramen magnum (cranocervikala övergången)</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Tentorie</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Falx</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Opticus (nervskide)</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intraventrikulär</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default center-block" style="width:70%">
+                    <div class="panel panel-default panel-heading panel-title">Operationsindikation</div>
+                    <div class="panel panel-body">
+
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Symtom</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Tillväxt</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Storlek</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Patientens önskan</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default center-block" style="width:70%">
+                    <div class="panel panel-default panel-heading panel-title">Växtkarakteristiska</div>
+                    <div class="panel panel-body">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">En-plaque växt</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Intraosseös växt</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Inväxt i venös sinus</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Radiologiskt multifokal</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ödem</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default center-block" style="width:70%">
+                    <div class="panel panel-default panel-heading panel-title">Operation</div>
+                    <div class="panel panel-body">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Multipla tumörer opererade vid samma tillfälle</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Recidiv op</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Kompletterade kirurgi</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Planerad radikalitet</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Total</option>
+                                    <option value="2">Subtotal</option>
+                                    <option value="3">Biopsi</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Peroperativ radikalitet enligt Simpson</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Post op radikalitet CT/MRT</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Total</option>
+                                    <option value="2">Subtotal</option>
+                                    <option value="3">Ej utförd</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Kranioplastik</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="kranio" onchange="kraniotyp()">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group" id="typkrani" style="display:none">
+                            <label class="control-label col-sm-3">Typ</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Duraplastik med främmande material</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="dura" onchange="duratyp()">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group" id="typdura" style="display:none">
+                            <label class="control-label col-sm-3">Typ</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Endoskopisk approach/assistans</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Neurofysiologisk monitorering</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Knivtid i minuter</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Mindre än 3 tim</option>
+                                    <option value="2">3 - 6 timmar</option>
+                                    <option value="3">Mer än 6 timmar</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Post operativ MDK</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="poop" onchange="poopmdk()">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group" id="poopdat" style="display:none">
+                            <label class="control-label col-sm-3">Datum</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div id="kirgliom" style="display:none">
         <div class="panel panel-default center-block" style="width:70%">
-            <div class="panel panel-default panel-heading panel-title">Växtkarakteristiska</div>
+            <div class="panel panel-default panel-heading panel-title">Tumöruppgifter</div>
             <div class="panel panel-body">
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">En-plaque växt</label>
+                    <label class="control-label col-sm-3 h4">Lokal</label>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Höger</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Vänster</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Bilateralt</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Centralt</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Multilobär</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Spinalt</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Intramedulärt</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Extramedulärt</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Multifokalt</label>
+                    <div class="col-xs-3">
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel panel-default center-block" style="width:70%">
+            <div class="panel panel-default panel-heading panel-title">Preoperativ utredning</div>
+            <div class="panel panel-body">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Datortomografi</label>
                     <div class="col-xs-3">
                         <select class="form-control">
                             <option value="0">--Välj--</option>
@@ -290,7 +623,7 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Intraosseös växt</label>
+                    <label class="control-label col-sm-3">MRT</label>
                     <div class="col-xs-3">
                         <select class="form-control">
                             <option value="0">--Välj--</option>
@@ -300,7 +633,7 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Inväxt i venös sinus</label>
+                    <label class="control-label col-sm-3">PET</label>
                     <div class="col-xs-3">
                         <select class="form-control">
                             <option value="0">--Välj--</option>
@@ -310,7 +643,7 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Radiologiskt multifokal</label>
+                    <label class="control-label col-sm-3">Neuropsykbedömning</label>
                     <div class="col-xs-3">
                         <select class="form-control">
                             <option value="0">--Välj--</option>
@@ -320,7 +653,369 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Ödem</label>
+                    <label class="control-label col-sm-3">fMRI</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">nTMS</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Traktorgrafi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Logopedbedömning</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kognitivt test</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Annat</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Funktionsgrad före kirurgi (bästa status)</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">0</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default center-block" style="width:70%">
+            <div class="panel panel-default panel-heading panel-title">Preoperativa symtom</div>
+            <div class="panel panel-body">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Fokalneurologiska</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="fokal" onchange="fokalneur()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="fokalsymt" style="display:none">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Tal</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Syn</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Hörsel</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Sensoriska</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="sensor" onchange="sensoriska()">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container-fluid" id="sensoriskasymtom" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Arm</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="sensorarm" onchange="armar()">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="arm" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Höger</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Vänster</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ben</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="sensorben" onchange="benar()">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="ben" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Höger</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Vänster</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Pares</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="pares" onchange="paressym()">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container-fluid" id="paressymtom" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Arm</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="paresarm" onchange="pararmar()">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="pararm" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Höger</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Vänster</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ben</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="paresben" onchange="parbenar()">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="parben" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Höger</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Vänster</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Plegi</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="plegi" onchange="plegisym()">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container-fluid" id="plegisymtom" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Arm</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="plegiar" onchange="plegiarmar()">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="plegiarmen" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Höger</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Vänster</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ben</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="plegib" onchange="plegibenar()">
+                                    <option value="0">--Välj--</option>
+                                    <option value="1">Nej</option>
+                                    <option value="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="plegibenet" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Höger</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Vänster</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Kranialnervspåverkan</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Epilepsi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="epilep" onchange="epilepsi()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="epi" style="display:none">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Fokal</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Generell</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Trycksymtom</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kognition och/eller personlighetsförändringar</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Huvudvärk</label>
                     <div class="col-xs-3">
                         <select class="form-control">
                             <option value="0">--Välj--</option>
@@ -332,107 +1027,10 @@
             </div>
         </div>
         <div class="panel panel-default center-block" style="width:70%">
-            <div class="panel panel-default panel-heading panel-title">Operation</div>
+            <div class="panel panel-default panel-heading panel-title">Peroperativt</div>
             <div class="panel panel-body">
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Multipla tumörer opererade vid samma tillfälle</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Recidiv op</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Kompletterade kirurgi</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Planerad radikalitet</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Total</option>
-                            <option value="2">Subtotal</option>
-                            <option value="3">Biopsi</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Peroperativ radikalitet enligt Simpson</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Post op radikalitet CT/MRT</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Total</option>
-                            <option value="2">Subtotal</option>
-                            <option value="3">Ej utförd</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Kranioplastik</label>
-                    <div class="col-xs-3">
-                        <select class="form-control" id="kranio" onchange="kraniotyp()">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group" id="typkrani" style="display:none">
-                    <label class="control-label col-sm-3">Typ</label>
-                    <div class="col-xs-3">
-                        <input type="text" class="form-control" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Duraplastik med främmande material</label>
-                    <div class="col-xs-3">
-                        <select class="form-control" id="dura" onchange="duratyp()">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Nej</option>
-                            <option value="2">Ja</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group" id="typdura" style="display:none">
-                    <label class="control-label col-sm-3">Typ</label>
-                    <div class="col-xs-3">
-                        <input type="text" class="form-control" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Endoskopisk approach/assistans</label>
+                    <label class="control-label col-sm-3">Vaken kirurgi</label>
                     <div class="col-xs-3">
                         <select class="form-control">
                             <option value="0">--Välj--</option>
@@ -452,36 +1050,206 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Knivtid i minuter</label>
+                    <label class="control-label col-sm-3">Neuronavigation</label>
                     <div class="col-xs-3">
                         <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Mindre än 3 tim</option>
-                            <option value="2">3 - 6 timmar</option>
-                            <option value="3">Mer än 6 timmar</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Post operativ MDK</label>
-                    <div class="col-xs-3">
-                        <select class="form-control" id="poop" onchange="poopmdk()">
                             <option value="0">--Välj--</option>
                             <option value="1">Nej</option>
                             <option value="2">Ja</option>
                         </select>
                     </div>
                 </div>
-                <div class="row form-group" id="poopdat" style="display:none">
-                    <label class="control-label col-sm-3">Datum</label>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">5-ALA</label>
                     <div class="col-xs-3">
-                        <input type="text" class="form-control" />
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Ultraljud</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+              </div>
+            </div>
+        <div class="panel panel-default center-block" style="width:70%">
+            <div class="panel panel-default panel-heading panel-title">Postoperativ radikalitetsbedöming</div>
+            <div class="panel panel-body">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kirurgisk intention</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Biopsi</option>
+                            <option value="2">Partiell resektion</option>
+                            <option value="3">Radikal kirurgi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Antibiotika profylax perop</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Postoperativ MR</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja (inom 72 timmar)</option>
+                            <option value="3">Ja (efter 72 timmar)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Radikalitet kontrastuppladdning</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Komplett resektion</option>
+                            <option value="2">Nära komplett resektion (<1cm3)</option>
+                            <option value="3">Partiell resektion</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Radikalitet flairsignal</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Komplett resektion</option>
+                            <option value="2">Nära komplett resektion (<1cm3)</option>
+                            <option value="3">Partiell resektion</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Postoperativ MDT-konferens</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <div class="panel panel-default center-block" style="width:70%">
+            <div class="panel panel-default panel-heading panel-title">Histopatologiskt fynd</div>
+            <div class="panel panel-body">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">PAD</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="padshow" onchange="showpad()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="pad" style="display:none">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">PAD/Cyt nr</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">PAD/Cyt år</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Patologlab</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Histopatologisk diagnos</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Lika lista som finns idag</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">WHO Malignitetsgrad</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">IDH mut</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                                <option value="3">Okänt</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">1p19q codel </label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                                <option value="3">Okänt</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Mgmt metylerad </label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                                <option value="3">Okänt</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Ki67 (anges i procent)</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Ki67 okänt</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
+            </div>
 </body>
 </html>
