@@ -101,12 +101,12 @@ function lokalisationkir() {
     if
                         (document.getElementById("lokalkir").selectedIndex == "1") {
         document.getElementById("kirmeningiom").style.display = "block"
-        document.getElementById("ovrigakir").style.display = "none";
+        document.getElementById("kirgliom").style.display = "none";
         document.getElementById("ryggarkir").style.display = "none";
     }
     else if (
         document.getElementById("lokalkir").selectedIndex == "2") {
-        document.getElementById("ovrigakir").style.display = "block"
+        document.getElementById("kirgliom").style.display = "block"
         document.getElementById("kirmeningiom").style.display = "none";
         document.getElementById("ryggarkir").style.display = "none";
     }
@@ -114,7 +114,7 @@ function lokalisationkir() {
     document.getElementById("lokalkir").selectedIndex == "3") {
         document.getElementById("ryggarkir").style.display = "block"
         document.getElementById("kirmeningiom").style.display = "none";
-        document.getElementById("ovrigakir").style.display = "none";
+        document.getElementById("kirgliom").style.display = "none";
     }
 
     else {
@@ -293,6 +293,7 @@ function anledning() {
         document.getElementById("reoper").style.display = "none";
     }
 }
+
 function kraniotyp() {
     if
         (document.getElementById("kranio").selectedIndex == "2") {
@@ -318,5 +319,124 @@ function poopmdk() {
     }
     else {
         document.getElementById("poopdat").style.display = "none";
+    }
+}
+function plankircheck() {
+    if (document.getElementById("plankir").checked) {
+        document.getElementById("orsakplankir").style.display = "block"
+        document.getElementById("opanledning").style.display = "none";
+    }
+    else {
+        document.getElementById("orsakplankir").style.display = "none";
+        document.getElementById("opanledning").style.display = "block";
+    }
+}
+function sensoriska() {
+    if 
+        (document.getElementById("sensor").selectedIndex == "2") {
+        document.getElementById("sensoriskasymtom").style.display = "block";
+    }
+    else {
+        document.getElementById("sensoriskasymtom").style.display = "none";
+    }
+}
+function armar() {
+    if
+        (document.getElementById("sensorarm").selectedIndex == "2") {
+        document.getElementById("arm").style.display = "block";
+    }
+    else {
+        document.getElementById("arm").style.display = "none";
+    }
+}
+function benar() {
+    if 
+        (document.getElementById("sensorben").selectedIndex == "2") {
+        document.getElementById("ben").style.display = "block";
+    }
+    else {
+        document.getElementById("ben").style.display = "none";
+    }
+}
+function paressym() {
+    if
+        (document.getElementById("pares").selectedIndex == "2") {
+        document.getElementById("paressymtom").style.display = "block";
+    }
+    else {
+        document.getElementById("paressymtom").style.display = "none";
+    }
+}
+function pararmar() {
+    if 
+        (document.getElementById("paresarm").selectedIndex == "2") {
+        document.getElementById("pararm").style.display = "block";
+    }
+    else {
+        document.getElementById("pararm").style.display = "none";
+    }
+}
+function parbenar() {
+    if
+        (document.getElementById("paresben").selectedIndex == "2") {
+        document.getElementById("parben").style.display = "block";
+    }
+    else {
+        document.getElementById("parben").style.display = "none";
+    }
+}
+function fokalneur() {
+    if 
+        (document.getElementById("fokal").selectedIndex == "2") {
+        document.getElementById("fokalsymt").style.display = "block";
+    }
+    else {
+        document.getElementById("fokalsymt").style.display = "none";
+    }
+}
+function plegisym() {
+    if
+        (document.getElementById("plegi").selectedIndex == "2") {
+        document.getElementById("plegisymtom").style.display = "block";
+    }
+    else {
+        document.getElementById("plegisymtom").style.display = "none";
+    }
+}
+function plegiarmar() {
+    if
+        (document.getElementById("plegiar").selectedIndex == "2") {
+        document.getElementById("plegiarmen").style.display = "block";
+    }
+    else {
+        document.getElementById("plegiarmen").style.display = "none";
+    }
+}
+function plegibenar() {
+    if 
+        (document.getElementById("plegib").selectedIndex == "2") {
+        document.getElementById("plegibenet").style.display = "block";
+    }
+    else {
+        document.getElementById("plegibenet").style.display = "none";
+    }
+}
+function epilepsi() {
+    if 
+        (document.getElementById("epilep").selectedIndex == "2") {
+        document.getElementById("epi").style.display = "block";
+    }
+    else {
+        document.getElementById("epi").style.display = "none";
+    }
+}
+
+function showpad() {
+    if
+        (document.getElementById("padshow").selectedIndex == "2") {
+        document.getElementById("pad").style.display = "block";
+    }
+    else {
+        document.getElementById("pad").style.display = "none";
     }
 }
