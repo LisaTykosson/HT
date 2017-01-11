@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.js"></script>
+    <script src="js/npm.js"></script>
+    <script src="js/JavaScript.js"></script>
+</head>
+<body>
+    <div style="width:70%" class="center-block">
+        <ul class="nav nav-tabs navbar-form center-block nav-justified">
+            <li role="presentation" id="diag"><a href="Anmalan.html">Anmälan</a></li>
+            <li role="presentation" id="kir" class="active"><a href="kir.html">Kirurgisk behandling</a></li>
+            <li role="presentation" id="kir"><a href="onk.html">Icke-kirurgisk behandling</a></li>
+        </ul>
+        <br />
+        <div>
+            <ul class="nav navbar-form nav-tabs">
+                <li role="presentation" ><a href="kir.html">Kirurgisk behandling</a></li>
+                <li role="presentation"><a href="postop.html">Postoperativ uppföljning inom 30 dgr</a></li>
+                <li role="presentation"  class="active"><a href="senkomp.html">Postoperativ uppföljning efter 30 dgr</a></li>
+            </ul>
+            <br />
+        </div>
+    </div>
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Komplikationer</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Nytillkomna efter 30 dagar kvarstående neurologiska bortfall</label>
+                <div class="col-xs-3">
+                    <select class="form-control" onchange="nytill()" id="nya">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div id="bortfall" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Dysfasi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Pares/Plegi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kranialnervspåverkan</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kognitiva symptom</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+                </div>
+        </div>
+
+
+</body>
+</html>
