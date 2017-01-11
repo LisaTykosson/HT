@@ -1252,5 +1252,63 @@
             </div>
         </div>
             </div>
+
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Uppföljning</div>
+        <div class="panel panel-body">
+            <div class="row form-group" id="folj">
+                <label class="control-label col-sm-3">Fortsatt uppföljning sker vid sjukhus/klinik</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Patienten följes ej</label>
+                <div class="col-xs-3">
+                    <input type="checkbox" id="patfolj" onchange="patfoljcheck()" />
+                </div>
+            </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Inkluderad i studieprotokoll</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="stud" onchange="studieprot()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group" id="studie" style="display:none">
+                    <label class="control-label col-sm-3">Behandlingsstudie</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Icke kirurgisk tumörbehandling</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="icke" onchange="onko()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group" id="ickekirurgisk" style="display:none">
+                    <label class="control-label col-sm-3">Behandling sker vid klinik/sjukhus</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                        </select>
+                    </div>
+                </div>
+        </div>
+    </div>
 </body>
 </html>
