@@ -440,3 +440,29 @@ function showpad() {
         document.getElementById("pad").style.display = "none";
     }
 }
+function studieprot() {
+    if 
+        (document.getElementById("stud").selectedIndex == "2") {
+        document.getElementById("studie").style.display = "block";
+    }
+    else {
+        document.getElementById("studie").style.display = "none";
+    }
+}
+function onko() {
+    if
+        (document.getElementById("icke").selectedIndex == "2") {
+        document.getElementById("ickekirurgisk").style.display = "block";
+    }
+    else {
+        document.getElementById("ickekirurgisk").style.display = "none";
+    }
+}
+function patfoljcheck() {
+    if (document.getElementById("patfolj").checked) {
+        document.getElementById("folj").style.display = "none";
+    }
+    else {
+        document.getElementById("folj").style.display = "block";
+    }
+}
