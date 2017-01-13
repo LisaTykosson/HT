@@ -466,3 +466,59 @@ function patfoljcheck() {
         document.getElementById("folj").style.display = "block";
     }
 }
+function ickkir() {
+    if (document.getElementById("ikir").selectedIndex == "2") {
+        document.getElementById("onkbehand").style.display = "block";
+    }
+    else {
+        document.getElementById("onkbehand").style.display = "none";
+    }
+}
+function radioter() {
+    if (document.getElementById("radi").selectedIndex == "2") {
+        document.getElementById("rad").style.display = "block";
+    }
+    else {
+        document.getElementById("rad").style.display = "none";
+    }
+}
+function konkokemo() {
+    if (document.getElementById("konk").selectedIndex == "2") {
+        document.getElementById("konkdat").style.display = "block";
+    }
+    else {
+        document.getElementById("konkdat").style.display = "none";
+    }
+}
+function kemoter() {
+    if (document.getElementById("kemo").selectedIndex == "2") {
+        document.getElementById("kemodat").style.display = "block";
+    }
+    else {
+        document.getElementById("kemodat").style.display = "none";
+    }
+}
+function fotoner() {
+    if (document.getElementById("fot").checked) {
+        document.getElementById("foto").style.display = "block";
+    }
+    else {
+        document.getElementById("foto").style.display = "none";
+    }
+}
+function stereotaxi() {
+    if (document.getElementById("ster").checked) {
+        document.getElementById("stereo").style.display = "block";
+    }
+    else {
+        document.getElementById("stereo").style.display = "none";
+    }
+}
+function anickir() {
+    if (document.getElementById("ann").selectedIndex == "2") {
+        document.getElementById("annikir").style.display = "block";
+    }
+    else {
+        document.getElementById("annikir").style.display = "none";
+    }
+}
