@@ -9,7 +9,7 @@
     <script src="js/JavaScript.js"></script>
 </head>
 <body>
-    <ul class="nav nav-tabs navbar-default center-block nav-justified center-block" style="width:70%">
+    <ul class="nav nav-tabs navbar-form center-block nav-justified center-block" style="width:70%">
         <li role="presentation" id="diag"><a href="Anmalan.html">Anmälan</a></li>
         <li role="presentation"><a href="kir.html">Kirurgisk behandling</a></li>
         <li role="presentation" class="active"><a href="onk.html">Icke-kirurgisk behandling</a></li>
@@ -198,6 +198,208 @@
                     <label class="control-label col-sm-3">Datum</label>
                     <div class="col-xs-3">
                         <input type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Icke-kirurgisk tumörbehandling</div>
+        <div class="panel panel-body">
+          
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Icke-kirurgisk tumörbehandling</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="ikir" onchange="ickkir()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Beslutsdatum</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div id="onkbehand" style="display:none">
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Radioterapi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="radi" onchange="radioter()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="rad" style="display:none" class="container-fluid">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Rebestrålning</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Startdatum</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Fraktionsdos</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Slutdos</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="h4">Teknik</div>
+                        <br/>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Fotoner</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="fot" onchange="fotoner()" />
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="foto" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">3D-CRT</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">VMAT/IMRT/TOMO</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Protoner</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Stereotaxi</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="ster" onchange="stereotaxi()" />
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="stereo" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Gammakniv</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Annan teknik</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Konkomitant kemoterapi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="konk" onchange="konkokemo()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group container-fluid" id="konkdat" style="display:none">
+                    <label class="control-label col-sm-3">Startdatum</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kemoterapi</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="kemo" onchange="kemoter()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="kemodat" style="display:none" class="container-fluid">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Startdatum</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Temozolomid</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">CCNU/BCNU</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">PCV</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Annat</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Annan icke-kirurgisk behandling</label>
+                    <div class="col-xs-3">
+                        <select class="form-control" id="ann" onchange="anickir()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="annikir" style="display:none">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Startdatum</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Substans</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Bevacizumab (Avastin)</option>
+                                <option value="2">Everolimus (Votubia, Afinitor)</option>
+                                <option value="3">Annat</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
