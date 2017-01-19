@@ -206,7 +206,7 @@
     <div class="panel panel-default center-block" style="width:70%">
         <div class="panel panel-default panel-heading panel-title">Icke-kirurgisk tumörbehandling</div>
         <div class="panel panel-body">
-          
+
             <div class="row form-group">
                 <label class="control-label col-sm-3">Icke-kirurgisk tumörbehandling</label>
                 <div class="col-xs-3">
@@ -266,7 +266,7 @@
                     </div>
                     <div class="container-fluid">
                         <div class="h4">Teknik</div>
-                        <br/>
+                        <br />
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Fotoner</label>
                             <div class="col-xs-3">
@@ -403,7 +403,50 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
+            <div class="panel panel-default center-block" style="width:70%">
+                <div class="panel panel-default panel-heading panel-title">Fortsatt uppföljning</div>
+                <div class="panel panel-body">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Fortsatt uppföljning</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="foljo" onchange="foljicke()">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group" id="foljningonk" style="display:none">
+                        <label class="control-label col-sm-3">Uppföljning vid klinik/sjukhus</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Patienten inkluderad i studie</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="studonk" onchange="studieonk()">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group" id="studieicke" style="display:none">
+                        <label class="control-label col-sm-3">Behandlingsstudie</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option value="0">--Välj--</option>
+                                <option value="1">Nej</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </body>
 </html>
