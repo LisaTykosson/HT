@@ -522,3 +522,21 @@ function anickir() {
         document.getElementById("annikir").style.display = "none";
     }
 }
+function studieonk() {
+    if
+        (document.getElementById("studonk").selectedIndex == "2") {
+        document.getElementById("studieicke").style.display = "block";
+    }
+    else {
+        document.getElementById("studieicke").style.display = "none";
+    }
+}
+function foljicke() {
+    if 
+        (document.getElementById("foljo").selectedIndex == "2") {
+        document.getElementById("foljningonk").style.display = "block";
+    }
+    else {
+        document.getElementById("foljningonk").style.display = "none";
+    }
+}
