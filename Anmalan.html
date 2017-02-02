@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="panel panel-default center-block" style="width:70%">
-        <div class="panel panel-default panel-heading panel-title">Tumörlokalisation</div>
+        <div class="panel panel-default panel-heading panel-title">Tumör</div>
         <div class="panel panel-body">
 
             <div class="row form-group">
@@ -66,7 +66,28 @@
                     </select>
                 </div>
             </div>
+
             <div id="ovriga" style="display:none">
+                <div class="h4">Tumörstorlek</div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">A</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">B</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">C</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <br />
                 <div class="row form-group">
                     <label class="control-label col-sm-3">Höger</label>
                     <div class="col-xs-3">
@@ -124,138 +145,525 @@
             </div>
             <div id="meningiom" style="display:none">
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Konvexitet</label>
+                    <label class="control-label col-sm-3">Antal tumörer   <a data-toggle="tooltip" title="Vid mer än en tumör alternativt NF2 anges läge för de tre tumörer som anses viktigast."><i class="glyphicon glyphicon-info-sign"></i></a></label>
                     <div class="col-xs-3">
-                        <input type="checkbox" id="konvex" onchange="konvmening()" />
+                        <select class="form-control" id="antmen" onchange="visamen()">
+                            <option value="0">--Välj--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">3+</option>
+                            <option value="5">Meningiomatos</option>
+                            <option value="6">NF2</option>
+                        </select>
                     </div>
                 </div>
-                <div class="container-fluid" id="konvexitet" style="display:none">
+                <div class="h4">Tumörstorlek</div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">A</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">B</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">C</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <br />
+                <div id="entum" style="display:none">
+                    <div class="text-primary h4">Tumör 1</div>
+                    <hr />
                     <div class="row form-group">
-                        <label class="control-label col-sm-3">Supratentoriellt</label>
+                        <label class="control-label col-sm-3">Konvexitet</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="konvex" onchange="konvmening()" />
+                        </div>
+                    </div>
+                    <div class="container-fluid" id="konvexitet" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Supratentoriellt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Infratentoriellt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Främre skallbas</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="framre" onchange="frammening()" />
+                        </div>
+                    </div>
+
+                    <div class="container" id="fram" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Olfaktorius</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Planum sfenoidale</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Tuberculum sellae</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Mellersta skallbasen</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="mell" onchange="mellmening()" />
+                        </div>
+                    </div>
+
+                    <div class="container" id="mellan" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Sinus cavernosus</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Parasellärt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Clinoideus anterior/medial kilbensvingen</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Lateralt kilben</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Temporal fossa</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Bakre skallbas</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="bak" onchange="bakmening()" />
+                        </div>
+                    </div>
+                    <div class="container" id="bakre" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Petroclival (pre-meatal)</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ponsvinkel (retro-meatal)</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Foramen magnum (cranocervikala övergången)</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Tentorie</label>
                         <div class="col-xs-3">
                             <input type="checkbox" />
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="control-label col-sm-3">Infratentoriellt</label>
+                        <label class="control-label col-sm-3">Falx</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Parasagittal</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Pineale</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Opticus (nervskide)</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Intraventrikulär</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                </div>
+                <div id="tvatum" style="display:none">
+                    <br />
+                    <div class="text-primary h4">Tumör 2</div>
+                    <hr />
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Konvexitet</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="konvex" onchange="konvmening()" />
+                        </div>
+                    </div>
+                    <div class="container-fluid" id="konvexitet" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Supratentoriellt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Infratentoriellt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Främre skallbas</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="framre" onchange="frammening()" />
+                        </div>
+                    </div>
+
+                    <div class="container" id="fram" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Olfaktorius</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Planum sfenoidale</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Tuberculum sellae</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Mellersta skallbasen</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="mell" onchange="mellmening()" />
+                        </div>
+                    </div>
+
+                    <div class="container" id="mellan" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Sinus cavernosus</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Parasellärt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Clinoideus anterior/medial kilbensvingen</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Lateralt kilben</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Temporal fossa</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Bakre skallbas</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="bak" onchange="bakmening()" />
+                        </div>
+                    </div>
+                    <div class="container" id="bakre" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Petroclival (pre-meatal)</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ponsvinkel (retro-meatal)</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Foramen magnum (cranocervikala övergången)</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Tentorie</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Falx</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Parasagittal</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Pineale</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Opticus (nervskide)</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Intraventrikulär</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                </div>
+                <div id="tretum" style="display:none">
+                    <br />
+                    <div class="text-primary h4">Tumör 3</div>
+                    <hr />
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Konvexitet</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="konvex" onchange="konvmening()" />
+                        </div>
+                    </div>
+                    <div class="container-fluid" id="konvexitet" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Supratentoriellt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Infratentoriellt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Främre skallbas</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="framre" onchange="frammening()" />
+                        </div>
+                    </div>
+
+                    <div class="container" id="fram" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Olfaktorius</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Planum sfenoidale</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Tuberculum sellae</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Mellersta skallbasen</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="mell" onchange="mellmening()" />
+                        </div>
+                    </div>
+
+                    <div class="container" id="mellan" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Sinus cavernosus</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Parasellärt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Clinoideus anterior/medial kilbensvingen</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Lateralt kilben</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Temporal fossa</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Bakre skallbas</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" id="bak" onchange="bakmening()" />
+                        </div>
+                    </div>
+                    <div class="container" id="bakre" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Petroclival (pre-meatal)</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ponsvinkel (retro-meatal)</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Foramen magnum (cranocervikala övergången)</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Tentorie</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Falx</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Parasagittal</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Pineale</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Opticus (nervskide)</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Intraventrikulär</label>
                         <div class="col-xs-3">
                             <input type="checkbox" />
                         </div>
                     </div>
                 </div>
 
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Främre skallbas</label>
-                    <div class="col-xs-3">
-                        <input type="checkbox" id="framre" onchange="frammening()" />
-                    </div>
-                </div>
-
-                <div class="container" id="fram" style="display:none">
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Olfaktorius</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Planum sfenoidale</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Tuberculum sellae</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Mellersta skallbasen</label>
-                    <div class="col-xs-3">
-                        <input type="checkbox" id="mell" onchange="mellmening()" />
-                    </div>
-                </div>
-
-                <div class="container" id="mellan" style="display:none">
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Sinus cavernosus/Parasellärt</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Medialt kilben</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Lateralt kilben</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Temporal fossa</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Bakre skallbas</label>
-                    <div class="col-xs-3">
-                        <input type="checkbox" id="bak" onchange="bakmening()" />
-                    </div>
-                </div>
-                <div class="container" id="bakre" style="display:none">
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Petroclival</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Ponsvinkel/porus</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Foramen magnum (cranocervikala övergången)</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Tentorie</label>
-                    <div class="col-xs-3">
-                        <input type="checkbox" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Falx</label>
-                    <div class="col-xs-3">
-                        <input type="checkbox" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Opticus (nervskide)</label>
-                    <div class="col-xs-3">
-                        <input type="checkbox" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Intraventrikulär</label>
-                    <div class="col-xs-3">
-                        <input type="checkbox" />
-                    </div>
-                </div>
             </div>
+
+
             <div id="ryggar" style="display:none">
+                <div class="h4">Tumörstorlek</div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">A</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">B</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">C</label>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <br />
                 <div class="row form-group">
                     <label class="control-label col-sm-3">Cervikalt</label>
                     <div class="col-xs-3">
@@ -280,12 +688,74 @@
                         <input type="checkbox" />
                     </div>
                 </div>
-              
-                
-               
             </div>
+       
+        </div>
+        </div>
 
-
+    <div class="panel panel-default center-block" id="vaxtmen" style="width:70%; display:none">
+        <div class="panel panel-default panel-heading panel-title">Växtkarakteristiska</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">En-plaque växt</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Intraosseös växt</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Inväxt i venös sinus</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Inväxt i kranialnervsforamen</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Radiologiskt multifokal</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Ödem</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
     <div class="panel panel-default center-block" style="width:70%">
@@ -412,6 +882,16 @@
                         </select>
                     </div>
                 </div>
+                <div class="row form-group">
+                    <label class="control-label col-sm-3">Kranialnervssymtom</label>
+                    <div class="col-xs-3">
+                        <select class="form-control">
+                            <option value="0">--Välj--</option>
+                            <option value="1">Nej</option>
+                            <option value="2">Ja</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
 
@@ -465,7 +945,7 @@
                     <input type="text" class="form-control" />
                 </div>
             </div>
-            <div class="row form-group">
+            <div class="row form-group" style="display:none">
                 <label class="control-label col-sm-3">Diagnosgrund</label>
                 <div class="col-xs-3">
                     <select class="form-control">
@@ -524,6 +1004,16 @@
                     </select>
                 </div>
             </div>
+            <div class="row form-group" id="specmen" style="display:none">
+                <label class="control-label col-sm-3">Beslut av patientansvarig specialiserad läkare</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
             <div class="container-fluid" id="mdk" style="display:none">
                 <div class="row form-group" >
                     <label class="control-label col-sm-3">Datum</label>
@@ -533,82 +1023,18 @@
                 </div>
             </div>
             <div class="row form-group">
-                <label class="control-label col-sm-3">Kirurgisk behandling</label>
+                <label class="control-label col-sm-3">Planerad behandling</label>
                 <div class="col-xs-3">
                     <select class="form-control" id="kirbeh" onchange="kirbehklin()">
                         <option value="0">--Välj--</option>
-                        <option value="1">Nej</option>
-                        <option value="2">Ja</option>
+                        <option value="1">Kirurgisk behandling</option>
+                        <option value="2">Icke-kirurgisk behandling</option>
+                        <option value="3">Symtomlindrande</option>
+                        <option value="4">Expektans</option>
                     </select>
                 </div>
             </div>
             <div class="container-fluid" id="kirklin" style="display:none" >
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Behandlande klinik/sjukhus</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Lista med </option>
-                            <option value="2">kliniker att välja</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row form-group">
-                <label class="control-label col-sm-3">Icke-Kirurgisk behandling</label>
-                <div class="col-xs-3">
-                    <select class="form-control" id="ickirbeh" onchange="ickirbehklin()">
-                        <option value="0">--Välj--</option>
-                        <option value="1">Nej</option>
-                        <option value="2">Ja</option>
-                    </select>
-                </div>
-            </div>
-            <div class="container-fluid" id="ickirklin" style="display:none">
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Behandlande klinik/sjukhus</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Lista med </option>
-                            <option value="2">kliniker att välja</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row form-group">
-                <label class="control-label col-sm-3">Expektans</label>
-                <div class="col-xs-3">
-                    <select class="form-control" id="ex" onchange="expekt()">
-                        <option value="0">--Välj--</option>
-                        <option value="1">Nej</option>
-                        <option value="2">Ja</option>
-                    </select>
-                </div>
-            </div>
-            <div class="container-fluid" id="expektans" style="display:none">
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Behandlande klinik/sjukhus</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option value="0">--Välj--</option>
-                            <option value="1">Lista med </option>
-                            <option value="2">kliniker att välja</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row form-group">
-                <label class="control-label col-sm-3">Endast symtomlindrande behandling</label>
-                <div class="col-xs-3">
-                    <select class="form-control" id="lindra" onchange="symtlindr()">
-                        <option value="0">--Välj--</option>
-                        <option value="1">Nej</option>
-                        <option value="2">Ja</option>
-                    </select>
-                </div>
-            </div>
-            <div class="container-fluid" id="symlindr" style="display:none">
                 <div class="row form-group">
                     <label class="control-label col-sm-3">Behandlande klinik/sjukhus</label>
                     <div class="col-xs-3">
