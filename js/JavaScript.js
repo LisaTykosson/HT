@@ -2,6 +2,8 @@
     if 
                         (document.getElementById("lokal").selectedIndex == "1") {
         document.getElementById("meningiom").style.display = "block"
+        document.getElementById("specmen").style.display = "block";
+        document.getElementById("vaxtmen").style.display = "block";
         document.getElementById("ovriga").style.display = "none";
         document.getElementById("ryggar").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
@@ -10,6 +12,8 @@
     else if (
         document.getElementById("lokal").selectedIndex == "2") {
         document.getElementById("ovriga").style.display = "block"
+        document.getElementById("specmen").style.display = "none";
+        document.getElementById("vaxtmen").style.display = "none";
         document.getElementById("meningiom").style.display = "none";
         document.getElementById("ryggar").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
@@ -18,6 +22,8 @@
     else if (
     document.getElementById("lokal").selectedIndex == "3") {
         document.getElementById("ryggar").style.display = "block"
+        document.getElementById("specmen").style.display = "none";
+        document.getElementById("vaxtmen").style.display = "none";
         document.getElementById("meningiom").style.display = "none";
         document.getElementById("ovriga").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
@@ -26,6 +32,8 @@
 
     else {
         document.getElementById("meningiom").style.display = "none"
+        document.getElementById("specmen").style.display = "none";
+        document.getElementById("vaxtmen").style.display = "none";
         document.getElementById("ryggar").style.display = "none";
         document.getElementById("ovriga").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
@@ -171,40 +179,17 @@ function mdtdat() {
 }
 function kirbehklin() {
     if
-        (document.getElementById("kirbeh").selectedIndex == "2") {
+        (document.getElementById("kirbeh").selectedIndex == "1") {
         document.getElementById("kirklin").style.display = "block";
         document.getElementById("who").style.display = "none";
+    }
+    else if(
+        document.getElementById("kirbeh").selectedIndex == "2" || document.getElementById("kirbeh").selectedIndex == "3" || document.getElementById("kirbeh").selectedIndex == "4") {
+        document.getElementById("kirklin").style.display = "block";
     }
     else {
         document.getElementById("kirklin").style.display = "none";
         document.getElementById("who").style.display = "block";
-    }
-}
-function ickirbehklin() {
-    if 
-        (document.getElementById("ickirbeh").selectedIndex == "2") {
-        document.getElementById("ickirklin").style.display = "block";
-    }
-    else {
-        document.getElementById("ickirklin").style.display = "none";
-    }
-}
-function expekt() {
-    if
-        (document.getElementById("ex").selectedIndex == "2") {
-        document.getElementById("expektans").style.display = "block";
-    }
-    else {
-        document.getElementById("expektans").style.display = "none";
-    }
-}
-function symtlindr() {
-    if 
-        (document.getElementById("lindra").selectedIndex == "2") {
-        document.getElementById("symlindr").style.display = "block";
-    }
-    else {
-        document.getElementById("symlindr").style.display = "none";
     }
 }
 function malignitet() {
@@ -433,11 +418,20 @@ function epilepsi() {
 
 function showpad() {
     if
-        (document.getElementById("padshow").selectedIndex == "2") {
+        (document.getElementById("padshow").selectedIndex == "3") {
         document.getElementById("pad").style.display = "block";
     }
     else {
         document.getElementById("pad").style.display = "none";
+    }
+}
+function showpadm() {
+    if 
+        (document.getElementById("padshowm").selectedIndex == "3") {
+        document.getElementById("padm").style.display = "block";
+    }
+    else {
+        document.getElementById("padm").style.display = "none";
     }
 }
 function studieprot() {
@@ -538,5 +532,30 @@ function foljicke() {
     }
     else {
         document.getElementById("foljningonk").style.display = "none";
+    }
+}
+function visamen() {
+    if
+        (document.getElementById("antmen").selectedIndex == "1") {
+        document.getElementById("entum").style.display = "block"
+        document.getElementById("tvatum").style.display = "none"
+        document.getElementById("tretum").style.display = "none";
+    }
+    else if(
+            document.getElementById("antmen").selectedIndex == "2") {
+        document.getElementById("tvatum").style.display = "block"
+        document.getElementById("entum").style.display = "block"
+        document.getElementById("tretum").style.display = "none";
+    }
+    else if (
+            document.getElementById("antmen").selectedIndex == "3" || document.getElementById("antmen").selectedIndex == "4" || document.getElementById("antmen").selectedIndex == "5") {
+        document.getElementById("tretum").style.display = "block"
+        document.getElementById("tvatum").style.display = "block"
+        document.getElementById("entum").style.display = "block";
+    }
+    else {
+        document.getElementById("tretum").style.display = "none"
+        document.getElementById("tvatum").style.display = "none"
+        document.getElementById("entum").style.display = "none";
     }
 }
