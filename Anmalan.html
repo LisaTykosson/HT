@@ -145,7 +145,7 @@
             </div>
             <div id="meningiom" style="display:none">
                 <div class="row form-group">
-                    <label class="control-label col-sm-3">Antal tumörer   <a data-toggle="tooltip" title="Vid mer än en tumör alternativt NF2 anges läge för de tre tumörer som anses viktigast."><i class="glyphicon glyphicon-info-sign"></i></a></label>
+                    <label class="control-label col-sm-3">Antal tumörer      <a data-toggle="tooltip" title="Vid mer än en tumör alternativt NF2 anges läge för de tre tumörer som anses viktigast."><i class="glyphicon glyphicon-info-sign"></i></a></label>
                     <div class="col-xs-3">
                         <select class="form-control" id="antmen" onchange="visamen()">
                             <option value="0">--Välj--</option>
@@ -158,26 +158,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="h4">Tumörstorlek</div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">A</label>
-                    <div class="col-xs-3">
-                        <input type="text" class="form-control" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">B</label>
-                    <div class="col-xs-3">
-                        <input type="text" class="form-control" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">C</label>
-                    <div class="col-xs-3">
-                        <input type="text" class="form-control" />
-                    </div>
-                </div>
-                <br />
+        
                 <div id="entum" style="display:none">
                     <div class="text-primary h4">Tumör 1</div>
                     <hr />
@@ -196,6 +177,12 @@
                         </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Infratentoriellt</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Parasagittal</label>
                             <div class="col-xs-3">
                                 <input type="checkbox" />
                             </div>
@@ -306,12 +293,7 @@
                             <input type="checkbox" />
                         </div>
                     </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Parasagittal</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
+                   
                     <div class="row form-group">
                         <label class="control-label col-sm-3">Pineale</label>
                         <div class="col-xs-3">
@@ -354,6 +336,12 @@
                                 <input type="checkbox" />
                             </div>
                         </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Parasagittal</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row form-group">
@@ -460,12 +448,7 @@
                             <input type="checkbox" />
                         </div>
                     </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Parasagittal</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
+                  
                     <div class="row form-group">
                         <label class="control-label col-sm-3">Pineale</label>
                         <div class="col-xs-3">
@@ -508,6 +491,12 @@
                                 <input type="checkbox" />
                             </div>
                         </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Parasagittal</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row form-group">
@@ -614,12 +603,7 @@
                             <input type="checkbox" />
                         </div>
                     </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Parasagittal</label>
-                        <div class="col-xs-3">
-                            <input type="checkbox" />
-                        </div>
-                    </div>
+                   
                     <div class="row form-group">
                         <label class="control-label col-sm-3">Pineale</label>
                         <div class="col-xs-3">
@@ -737,16 +721,6 @@
                 </div>
             </div>
             <div class="row form-group">
-                <label class="control-label col-sm-3">Radiologiskt multifokal</label>
-                <div class="col-xs-3">
-                    <select class="form-control">
-                        <option value="0">--Välj--</option>
-                        <option value="1">Nej</option>
-                        <option value="2">Ja</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row form-group">
                 <label class="control-label col-sm-3">Ödem</label>
                 <div class="col-xs-3">
                     <select class="form-control">
@@ -756,8 +730,10 @@
                     </select>
                 </div>
             </div>
-        </div>
+        
     </div>
+        </div>
+
     <div class="panel panel-default center-block" style="width:70%">
         <div class="panel panel-default panel-heading panel-title">Patientuppgifter</div>
         <div class="panel panel-body">
@@ -927,7 +903,7 @@
                     <input type="checkbox" />
                 </div>
             </div>
-            <div class="row form-group">
+            <div class="row form-group" id="kontrmen">
                 <label class="control-label col-sm-3">Kontrastuppladdning</label>
                 <div class="col-xs-3">
                     <input type="checkbox" />
