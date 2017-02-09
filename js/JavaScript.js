@@ -4,6 +4,7 @@
         document.getElementById("meningiom").style.display = "block"
         document.getElementById("specmen").style.display = "block";
         document.getElementById("vaxtmen").style.display = "block";
+        document.getElementById("kontrmen").style.display = "none";
         document.getElementById("ovriga").style.display = "none";
         document.getElementById("ryggar").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
@@ -109,6 +110,7 @@ function lokalisationkir() {
     if
                         (document.getElementById("lokalkir").selectedIndex == "1") {
         document.getElementById("kirmeningiom").style.display = "block"
+        document.getElementById("uppf").style.display = "none";
         document.getElementById("kirgliom").style.display = "none";
         document.getElementById("ryggarkir").style.display = "none";
     }
@@ -129,6 +131,7 @@ function lokalisationkir() {
         document.getElementById("kirmeningiom").style.display = "none"
         document.getElementById("ryggarkir").style.display = "none";
         document.getElementById("ovrigakir").style.display = "none";
+        document.getElementById("uppf").style.display = "block";
     }
 }
 function reg() {
@@ -452,6 +455,15 @@ function onko() {
         document.getElementById("ickekirurgisk").style.display = "none";
     }
 }
+function onkomen() {
+    if 
+        (document.getElementById("ickemen").selectedIndex == "2") {
+        document.getElementById("ickekirurgiskmen").style.display = "block";
+    }
+    else {
+        document.getElementById("ickekirurgiskmen").style.display = "none";
+    }
+}
 function patfoljcheck() {
     if (document.getElementById("patfolj").checked) {
         document.getElementById("folj").style.display = "none";
@@ -557,5 +569,43 @@ function visamen() {
         document.getElementById("tretum").style.display = "none"
         document.getElementById("tvatum").style.display = "none"
         document.getElementById("entum").style.display = "none";
+    }
+}
+function oper3() {
+    if (document.getElementById("opt3").checked)
+        document.getElementById("st3").style.display = "block";
+    else {
+        document.getElementById("st3").style.display = "none";
+    }
+}
+function oper2() {
+    if (document.getElementById("opt2").checked)
+        document.getElementById("st2").style.display = "block";
+    else {
+        document.getElementById("st2").style.display = "none";
+    }
+}
+function oper1() {
+    if (document.getElementById("opt1").checked)
+        document.getElementById("st1").style.display = "block";
+    else {
+        document.getElementById("st1").style.display = "none";
+    }
+}
+function nejmenop() {
+    if
+        (document.getElementById("menorsak").selectedIndex == "1") {
+        document.getElementById("avbopmen").style.display = "block";
+        document.getElementById("senbopmen").style.display = "none";
+    }
+    else if
+        (document.getElementById("menorsak").selectedIndex == "2") {
+        document.getElementById("senbopmen").style.display = "block";
+        document.getElementById("avbopmen").style.display = "none";
+        
+    }
+    else {
+        document.getElementById("avbopmen").style.display = "none";
+        document.getElementById("senbopmen").style.display = "none"
     }
 }
