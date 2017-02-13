@@ -3,7 +3,7 @@
                         (document.getElementById("lokal").selectedIndex == "1") {
         document.getElementById("meningiom").style.display = "block"
         document.getElementById("specmen").style.display = "block";
-        document.getElementById("vaxtmen").style.display = "block";
+        document.getElementById("vaxtmen").style.display = "none";
         document.getElementById("kontrmen").style.display = "none";
         document.getElementById("ovriga").style.display = "none";
         document.getElementById("ryggar").style.display = "none";
@@ -607,5 +607,12 @@ function nejmenop() {
     else {
         document.getElementById("avbopmen").style.display = "none";
         document.getElementById("senbopmen").style.display = "none"
+    }
+}
+function nytumor() {
+    if (document.getElementById("nyt").checked)
+        document.getElementById("extra").style.display = "block";
+    else {
+        document.getElementById("extra").style.display = "none";
     }
 }
