@@ -9,6 +9,7 @@
         document.getElementById("ryggar").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
         document.getElementById("symtom").style.display = "none";
+        document.getElementById("mdt").style.display = "none";
     }
     else if (
         document.getElementById("lokal").selectedIndex == "2") {
@@ -19,6 +20,7 @@
         document.getElementById("ryggar").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
         document.getElementById("symtom").style.display = "none";
+        document.getElementById("mdt").style.display = "block";
     }
     else if (
     document.getElementById("lokal").selectedIndex == "3") {
@@ -29,6 +31,7 @@
         document.getElementById("ovriga").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
         document.getElementById("symtom").style.display = "none";
+        document.getElementById("mdt").style.display = "block";
     }
 
     else {
@@ -39,6 +42,7 @@
         document.getElementById("ovriga").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
         document.getElementById("symtom").style.display = "none";
+        document.getElementById("mdt").style.display = "block";
     }
 }
 function frammening() {
@@ -614,5 +618,30 @@ function nytumor() {
         document.getElementById("extra").style.display = "block";
     else {
         document.getElementById("extra").style.display = "none";
+    }
+}
+function visaovr() {
+    if 
+        (document.getElementById("antovr").selectedIndex == "1") {
+        document.getElementById("tumoren").style.display = "block"
+        document.getElementById("tumortva").style.display = "none"
+        document.getElementById("tumortre").style.display = "none";
+    }
+    else if (
+            document.getElementById("antovr").selectedIndex == "2") {
+        document.getElementById("tumortva").style.display = "block"
+        document.getElementById("tumoren").style.display = "block"
+        document.getElementById("tumortre").style.display = "none";
+    }
+    else if (
+            document.getElementById("antovr").selectedIndex == "3" || document.getElementById("antovr").selectedIndex == "4" || document.getElementById("antovr").selectedIndex == "5") {
+        document.getElementById("tumortre").style.display = "block"
+        document.getElementById("tumortva").style.display = "block"
+        document.getElementById("tumoren").style.display = "block";
+    }
+    else {
+        document.getElementById("tumortre").style.display = "none"
+        document.getElementById("tumortva").style.display = "none"
+        document.getElementById("tumoren").style.display = "none";
     }
 }
