@@ -1,30 +1,33 @@
 ﻿function lokalisation() {
     if 
                         (document.getElementById("lokal").selectedIndex == "1") {
-        document.getElementById("meningiom").style.display = "block"
-        document.getElementById("specmen").style.display = "block";
-        document.getElementById("vaxtmen").style.display = "none";
-        document.getElementById("kontrmen").style.display = "none";
-        document.getElementById("ovriga").style.display = "none";
+     
+        document.getElementById("spinalmeningi").style.display = "block";
         document.getElementById("ryggar").style.display = "none";
-        document.getElementById("symtomryggar").style.display = "none";
-        document.getElementById("symtom").style.display = "none";
-        document.getElementById("mdt").style.display = "none";
+        document.getElementById("patient").style.display = "none";
+        document.getElementById("diagnos").style.display = "none";
+        document.getElementById("planerad").style.display = "none";
+        document.getElementById("diagovr").style.display = "none";
+ 
     }
     else if (
-        document.getElementById("lokal").selectedIndex == "2") {
-        document.getElementById("ovriga").style.display = "block"
-        document.getElementById("specmen").style.display = "none";
-        document.getElementById("vaxtmen").style.display = "none";
-        document.getElementById("meningiom").style.display = "none";
+        document.getElementById("lokal").selectedIndex == "3" || document.getElementById("lokal").selectedIndex == "4" || document.getElementById("lokal").selectedIndex == "5" || document.getElementById("lokal").selectedIndex == "6" || document.getElementById("lokal").selectedIndex == "7" || document.getElementById("lokal").selectedIndex == "8" || document.getElementById("lokal").selectedIndex == "9" || document.getElementById("lokal").selectedIndex == "10" || document.getElementById("lokal").selectedIndex == "11" || document.getElementById("lokal").selectedIndex == "12" || document.getElementById("lokal").selectedIndex == "13" || document.getElementById("lokal").selectedIndex == "14" || document.getElementById("lokal").selectedIndex == "15" || document.getElementById("lokal").selectedIndex == "16" || document.getElementById("lokal").selectedIndex == "17" || document.getElementById("lokal").selectedIndex == "18") {
+
+        document.getElementById("spinalglio").style.display = "block";
         document.getElementById("ryggar").style.display = "none";
-        document.getElementById("symtomryggar").style.display = "none";
-        document.getElementById("symtom").style.display = "none";
-        document.getElementById("mdt").style.display = "block";
+        document.getElementById("patient").style.display = "none";
+        document.getElementById("diagnos").style.display = "none";
+        document.getElementById("planerad").style.display = "none";
+        document.getElementById("diagovr").style.display = "none";
+     
     }
     else if (
-    document.getElementById("lokal").selectedIndex == "3") {
-        document.getElementById("ryggar").style.display = "block"
+    document.getElementById("lokal").selectedIndex == "2" || document.getElementById("lokal").selectedIndex == "19" || document.getElementById("lokal").selectedIndex == "20" || document.getElementById("lokal").selectedIndex == "21" || document.getElementById("lokal").selectedIndex == "22") {
+        document.getElementById("ryggar").style.display = "block";
+        document.getElementById("patient").style.display = "block";
+        document.getElementById("diagnos").style.display = "block";
+        document.getElementById("planerad").style.display = "block";
+        document.getElementById("diagovr").style.display = "none";
         document.getElementById("specmen").style.display = "none";
         document.getElementById("vaxtmen").style.display = "none";
         document.getElementById("meningiom").style.display = "none";
@@ -35,14 +38,78 @@
     }
 
     else {
-        document.getElementById("meningiom").style.display = "none"
+        document.getElementById("spinalglio").style.display = "none";
+        ocument.getElementById("spinalmeningi").style.display = "none";
+        document.getElementById("ryggar").style.display = "none";
+        document.getElementById("patient").style.display = "none";
+        document.getElementById("diagnos").style.display = "none";
+        document.getElementById("planerad").style.display = "none";
+        document.getElementById("diagovr").style.display = "none";
         document.getElementById("specmen").style.display = "none";
         document.getElementById("vaxtmen").style.display = "none";
-        document.getElementById("ryggar").style.display = "none";
+        document.getElementById("meningiom").style.display = "none";
         document.getElementById("ovriga").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
         document.getElementById("symtom").style.display = "none";
+        document.getElementById("mdt").style.display = "none";
+    }
+}
+function spinalmen() {
+    if (document.getElementById("spinalmen").selectedIndex == "2"){
+        document.getElementById("ryggar").style.display = "block";
+        document.getElementById("patient").style.display = "block";
+        document.getElementById("diagnos").style.display = "block";
+        document.getElementById("planerad").style.display = "block";
         document.getElementById("mdt").style.display = "block";
+    }
+    else if (document.getElementById("spinalmen").selectedIndex == "1") {
+        document.getElementById("meningiom").style.display = "block"
+        document.getElementById("patient").style.display = "block";
+        document.getElementById("diagnos").style.display = "block";
+        document.getElementById("planerad").style.display = "block";
+        document.getElementById("diagovr").style.display = "block";
+        document.getElementById("specmen").style.display = "block";
+
+    }
+    else {
+        document.getElementById("meningiom").style.display = "none"
+       
+        document.getElementById("patient").style.display = "none";
+        document.getElementById("diagnos").style.display = "none";
+        document.getElementById("planerad").style.display = "none";
+        document.getElementById("diagovr").style.display = "block";
+        document.getElementById("specmen").style.display = "none";
+ 
+    }
+}
+function spinalgli() {
+    if (document.getElementById("spinalgli").selectedIndex == "2") {
+        document.getElementById("ryggar").style.display = "block";
+        document.getElementById("patient").style.display = "block";
+        document.getElementById("diagnos").style.display = "block";
+        document.getElementById("planerad").style.display = "block";
+        document.getElementById("mdt").style.display = "block";
+        document.getElementById("ovriga").style.display = "none"
+
+    }
+    else if (document.getElementById("spinalgli").selectedIndex == "1") {
+        document.getElementById("ovriga").style.display = "block"
+        document.getElementById("ryggar").style.display = "none"
+        document.getElementById("patient").style.display = "block";
+        document.getElementById("planerad").style.display = "block";
+        document.getElementById("diagovr").style.display = "block";
+        document.getElementById("mdt").style.display = "block";
+       
+
+    }
+    else {
+        document.getElementById("ovriga").style.display = "none"
+        document.getElementById("patient").style.display = "none";
+        document.getElementById("diagnos").style.display = "none";
+        document.getElementById("planerad").style.display = "none";
+        document.getElementById("diagovr").style.display = "block";
+        document.getElementById("mdt").style.display = "none";
+
     }
 }
 function frammening() {
@@ -158,16 +225,32 @@ function nytill() {
 }
 function symtomfri() {
     if
-        (document.getElementById("sym").selectedIndex == "1" && document.getElementById("lokal").selectedIndex == "3") {
-        document.getElementById("symtomryggar").style.display = "block";
-        document.getElementById("symtom").style.display = "none";
-    }
-    else if(document.getElementById("sym").selectedIndex == "1" && document.getElementById("lokal").selectedIndex == "2") {
+        (document.getElementById("sym").selectedIndex == "1" && document.getElementById("spinalmen").selectedIndex == "1") {
         document.getElementById("symtom").style.display = "block";
         document.getElementById("symtomryggar").style.display = "none";
     }
-    else if (document.getElementById("sym").selectedIndex == "1" && document.getElementById("lokal").selectedIndex == "1") {
+    else if (document.getElementById("sym").selectedIndex == "1" && document.getElementById("lokal").selectedIndex == "2" || document.getElementById("lokal").selectedIndex == "19" || document.getElementById("lokal").selectedIndex == "20" || document.getElementById("lokal").selectedIndex == "21" || document.getElementById("lokal").selectedIndex == "22") {
+        document.getElementById("symtomryggar").style.display = "block";
+        document.getElementById("symtom").style.display = "none";
+    }
+    else if (document.getElementById("sym").selectedIndex == "1" && document.getElementById("spinalmen").selectedIndex == "2") {
+        document.getElementById("symtom").style.display = "none";
+        document.getElementById("symtomryggar").style.display = "block";
+    }
+    else if (document.getElementById("sym").selectedIndex == "1" && document.getElementById("spinalgli").selectedIndex == "2") {
+        document.getElementById("symtom").style.display = "none";
+        document.getElementById("symtomryggar").style.display = "block";
+    }
+    else if (document.getElementById("sym").selectedIndex == "1" && document.getElementById("spinalgli").selectedIndex == "1") {
         document.getElementById("symtom").style.display = "block";
+        document.getElementById("symtomryggar").style.display = "none";
+    }
+    else if (document.getElementById("sym").selectedIndex == "2") {
+        document.getElementById("symtom").style.display = "none";
+        document.getElementById("symtomryggar").style.display = "none";
+    }
+    else if (document.getElementById("sym").selectedIndex == "0") {
+        document.getElementById("symtom").style.display = "none";
         document.getElementById("symtomryggar").style.display = "none";
     }
     else {
