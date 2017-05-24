@@ -20,8 +20,8 @@
         <br />
         <ul class="nav navbar-form nav-tabs">
             <li role="presentation"><a href="kir.html">Kirurgisk behandling</a></li>
-            <li role="presentation" class="active"><a href="postop.html">Postoperativ uppföljning inom 30 dgr</a></li>
-            <li role="presentation" ><a href="senkomp.html">Postoperativ uppföljning efter 30 dgr</a></li>
+            <li role="presentation" class="active"><a href="postop.html">Postoperativ uppföljning </a></li>
+          
         </ul>
         <br />
     </div>
@@ -178,7 +178,13 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="control-label col-sm-3">Hydrocephalus</label>
+                        <label class="control-label col-sm-3">Hydrocephalus (visas inte för spinala)</label>
+                        <div class="col-xs-3">
+                            <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Likvorläckage (visas endast för spinala)</label>
                         <div class="col-xs-3">
                             <input type="checkbox" />
                         </div>
@@ -192,12 +198,32 @@
                 </div>
             </div>
             <div class="row form-group">
-                <label class="control-label col-sm-3">Nytillkomna epileptiska anfall postoperativt</label>
+                <label class="control-label col-sm-3">Nytillkomna epileptiska anfall postoperativt (icke spinala)</label>
                 <div class="col-xs-3">
                     <select class="form-control">
                         <option value="0">--Välj--</option>
                         <option value="1">Nej</option>
                         <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Nytillkomna neurologiska bortfall (spinala)</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="neurospinal" onchange="spinbortf()">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Nej</option>
+                        <option value="2">Ja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group" id="spinalkomp" style="display:none">
+                <label class="control-label col-sm-3">Övergående inom 30 dagar eller kvarstående</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option value="0">--Välj--</option>
+                        <option value="1">Övergående inom 30 dagar</option>
+                        <option value="2">Kvarstående efter 30 dagar</option>
                     </select>
                 </div>
             </div>
