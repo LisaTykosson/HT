@@ -193,24 +193,23 @@ function lokalisationkir() {
         document.getElementById("kirmeningiom").style.display = "block"
         document.getElementById("uppf").style.display = "none";
         document.getElementById("kirgliom").style.display = "none";
-        document.getElementById("ryggarkir").style.display = "none";
+        document.getElementById("kirrygg").style.display = "none";
     }
     else if (
         document.getElementById("lokalkir").selectedIndex == "2") {
         document.getElementById("kirgliom").style.display = "block"
         document.getElementById("kirmeningiom").style.display = "none";
-        document.getElementById("ryggarkir").style.display = "none";
+        document.getElementById("kirrygg").style.display = "none";
     }
     else if (
     document.getElementById("lokalkir").selectedIndex == "3") {
-        document.getElementById("ryggarkir").style.display = "block"
+        document.getElementById("kirrygg").style.display = "block";
         document.getElementById("kirmeningiom").style.display = "none";
         document.getElementById("kirgliom").style.display = "none";
     }
 
     else {
         document.getElementById("kirmeningiom").style.display = "none"
-        document.getElementById("ryggarkir").style.display = "none";
         document.getElementById("ovrigakir").style.display = "none";
         document.getElementById("uppf").style.display = "block";
     }
@@ -525,6 +524,15 @@ function showpad() {
         document.getElementById("pad").style.display = "none";
     }
 }
+function rshowpad() {
+    if 
+        (document.getElementById("padshowr").selectedIndex == "3") {
+        document.getElementById("rpad").style.display = "block";
+    }
+    else {
+        document.getElementById("rpad").style.display = "none";
+    }
+}
 function showpadm() {
     if 
         (document.getElementById("padshowm").selectedIndex == "3") {
@@ -736,5 +744,14 @@ function visaovr() {
         document.getElementById("tumortre").style.display = "none"
         document.getElementById("tumortva").style.display = "none"
         document.getElementById("tumoren").style.display = "none";
+    }
+}
+function spinbortf() {
+    if (document.getElementById("neurospinal").selectedIndex == "2"){
+        document.getElementById("spinalkomp").style.display = "block";
+    }
+        
+    else {
+        document.getElementById("spinalkomp").style.display = "none";
     }
 }
